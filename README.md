@@ -1,9 +1,8 @@
-MediaWiki backuprestore.sh
-==========================
+## MediaWiki backuprestore.sh
 
-Add this to the end of LocalSettings.php
+Add this to the end of LocalSettings.php:
+   
 
-    
     if (file_exists("$IP/maintenance/backuprestore.sh") && !file_exists("backups/backup.sql")) {
         $fp = fopen("backup.lck", 'w+');
         if (flock($fp, LOCK_EX)) {
